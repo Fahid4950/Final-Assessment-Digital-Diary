@@ -31,5 +31,15 @@ namespace Final_Assessment_Digital_Diary
         {
             ///okay,we can start work.///
         }
+
+        private void fontDialog1_Apply(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
