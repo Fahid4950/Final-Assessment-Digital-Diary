@@ -26,5 +26,10 @@ namespace Final_Assessment_Digital_Diary
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            ///
+        }
     }
 }
