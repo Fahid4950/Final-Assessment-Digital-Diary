@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Logic Leyar\EventService.cs" />
+    <Compile Include="Data Access Leyar\DatabaseConnection.cs" />
+    <Compile Include="Data Access Leyar\EventDataAccess.cs" />
+    <Compile Include="Entities\Create_Event.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\234.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentation Leyar\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

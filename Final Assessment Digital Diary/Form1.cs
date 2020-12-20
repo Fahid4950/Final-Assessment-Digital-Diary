@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Final_Assessment_Digital_Diary.Business_Logic_Leyar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +40,23 @@ namespace Final_Assessment_Digital_Diary
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            EventService eventService =  new EventService();
+            loadEventsdataGridView1.DataSource = eventService.GetCreateEvenstList();
 
         }
     }

@@ -41,7 +41,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -53,6 +52,7 @@
             this.listView2 = new System.Windows.Forms.ListView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.loadEventsdataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -60,6 +60,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadEventsdataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -139,9 +140,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 130);
+            this.richTextBox1.Location = new System.Drawing.Point(19, 130);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(441, 237);
+            this.richTextBox1.Size = new System.Drawing.Size(428, 237);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "";
             // 
@@ -189,21 +190,13 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listBox1);
+            this.groupBox2.Controls.Add(this.loadEventsdataGridView1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(664, 14);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(315, 156);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(19, 43);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(281, 95);
-            this.listBox1.TabIndex = 1;
             // 
             // label2
             // 
@@ -313,6 +306,18 @@
             this.listView3.TabIndex = 0;
             this.listView3.UseCompatibleStateImageBehavior = false;
             // 
+            // loadEventsdataGridView1
+            // 
+            this.loadEventsdataGridView1.AllowUserToAddRows = false;
+            this.loadEventsdataGridView1.AllowUserToDeleteRows = false;
+            this.loadEventsdataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.loadEventsdataGridView1.Location = new System.Drawing.Point(-17, 44);
+            this.loadEventsdataGridView1.Name = "loadEventsdataGridView1";
+            this.loadEventsdataGridView1.ReadOnly = true;
+            this.loadEventsdataGridView1.Size = new System.Drawing.Size(303, 99);
+            this.loadEventsdataGridView1.TabIndex = 1;
+            this.loadEventsdataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,6 +326,8 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -331,6 +338,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.loadEventsdataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,7 +358,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -361,6 +368,7 @@
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.DataGridView loadEventsdataGridView1;
     }
 }
 
