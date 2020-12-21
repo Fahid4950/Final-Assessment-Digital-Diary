@@ -49,9 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Logic Leyar\EventService.cs" />
+    <Compile Include="Business Logic Leyar\UserService.cs" />
     <Compile Include="Data Access Leyar\DatabaseConnection.cs" />
     <Compile Include="Data Access Leyar\EventDataAccess.cs" />
+    <Compile Include="Data Access Leyar\UserDataAccess.cs" />
     <Compile Include="Entities\Create_Event.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,12 +67,22 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Leyar\Home.cs" />
+    <Compile Include="Presentation Leyar\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Leyar\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Leyar\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -98,8 +111,6 @@
   <ItemGroup>
     <None Include="Resources\234.PNG" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentation Leyar\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

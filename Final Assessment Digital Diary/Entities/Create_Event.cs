@@ -16,7 +16,7 @@ namespace Final_Assessment_Digital_Diary.Entities
 
         public string Message { get; set; }
 
-        public string DateOfBirth { get; set; }
+        public string Date { get; set; }
 
         /*public static implicit operator Create_Event(Create_Event v)
         {

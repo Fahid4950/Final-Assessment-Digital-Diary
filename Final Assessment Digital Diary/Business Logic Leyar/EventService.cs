@@ -25,13 +25,13 @@ namespace Final_Assessment_Digital_Diary.Business_Logic_Leyar
             return eventDataAccess.GetAllCreateEvents();
         }
 
-        public int AddNewEvent(string title,string importancy,string message,string dateOfBirth)
+        public int AddNewEvent(string title,string importancy,string message,string date)
         {
             Create_Event create_Event = new Create_Event()
             { Title = title,
                Importancy = importancy,
                 Message = message,
-                DateOfBirth = dateOfBirth,
+                Date = date,
             };
             return this.eventDataAccess.InsertEvent(create_Event);
 

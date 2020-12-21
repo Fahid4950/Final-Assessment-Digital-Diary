@@ -30,7 +30,7 @@ namespace Final_Assessment_Digital_Diary.Data_Access_Leyar
                 create_Event.Title = reader["Title"].ToString();
                 create_Event.Importancy = reader["Importancy"].ToString();
                 create_Event.Message = reader["Message"].ToString();
-                create_Event.DateOfBirth = reader["DateOfBirth"].ToString();
+                create_Event.Date = reader["Date"].ToString();
                 events.Add(create_Event);
             }
 
@@ -47,7 +47,7 @@ namespace Final_Assessment_Digital_Diary.Data_Access_Leyar
             create_Event.Title = reader["Title"].ToString();
             create_Event.Importancy = reader["Importancy"].ToString();
             create_Event.Message = reader["Message"].ToString();
-            create_Event.DateOfBirth = reader["DateOfBirth"].ToString();
+            create_Event.Date = reader["Date"].ToString();
 
             return create_Event;
         }
@@ -55,7 +55,7 @@ namespace Final_Assessment_Digital_Diary.Data_Access_Leyar
 
         public int InsertEvent(Create_Event create_Event)
         {
-            string sql = "INSERT INTO Events(Title,Importancy,Message,DateOfBirth) VALUES('" + create_Event.Title + "','" + create_Event.Importancy + "','" + create_Event.Message + "','" + create_Event.DateOfBirth + "')";
+            string sql = "INSERT INTO Events(Title,Importancy,Message,Date) VALUES('" + create_Event.Title + "','" + create_Event.Importancy + "','" + create_Event.Message + "','" + create_Event.Date + "')";
             int result = databaseConnection.ExecuteQuery(sql);
             return result;
         }
