@@ -20,8 +20,10 @@ namespace Final_Assessment_Digital_Diary
             InitializeComponent();
             addEventButton.Click += this.RefreshEventGridView;
             addEventButton.Click += this.ClearFields;
-            updateEventTextBox.Click += this.RefreshEventGridView;
-            updateEventTextBox.Click += this.ClearFields;
+
+            UpdateButton.Click += this.RefreshEventGridView;
+            UpdateButton.Click += this.ClearFields;
+
             deleteTextBox1.Click += this.RefreshEventGridView;
             deleteTextBox1.Click += this.ClearFields;
         }
@@ -89,18 +91,8 @@ namespace Final_Assessment_Digital_Diary
         private void loadEventsdataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             eventid = (int)loadEventsdataGridView1.Rows[e.RowIndex].Cells[0].Value;
-            modifyTextBox.Text = loadEventsdataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            EventService eventService = new EventService();
-            int result = eventService.AddNewEvent(addTitletextBox.Text, addcomboBox.Text, addEventTextBox.Text, adddateTimePicker.Text);
-            if (result > 0)
-            {
-                MessageBox.Show("Event added successfully.");
-
-            }
-            else
-            {
-                MessageBox.Show("Error in adding Event");
-            }
+            updateTextBox.Text = loadEventsdataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+           
         }
 
         void RefreshEventGridView(object sender, EventArgs e)
@@ -111,24 +103,11 @@ namespace Final_Assessment_Digital_Diary
 
         void ClearFields(object sender, EventArgs e)
         {
-            //addCategoryTextBox.Text = updateCategoryTextBox.Text = deleteCategoryTextBox.Text = string.Empty;
-            addTitletextBox.Text= addcomboBox.Text=addEventTextBox.Text= adddateTimePicker.Text = updateEventTextBox.Text = string.Empty;
+            
+            addTitletextBox.Text= addcomboBox.Text=addEventTextBox.Text= adddateTimePicker.Text = UpdateButton.Text = string.Empty;
         }
 
-        private void updateEventTextBox_Click(object sender, EventArgs e)
-        {
-            EventService eventService = new EventService();
-            int result = eventService.UpdateEvent(eventid, updateEventTextBox.Text);
-            if (result > 0)
-            {
-                MessageBox.Show("Event Upadted successfully.");
-
-            }
-            else
-            {
-                MessageBox.Show("Error in Updating Event");
-            }
-        }
+        
 
         void RefreshGridView(object sender, EventArgs e)
         {
@@ -148,6 +127,26 @@ namespace Final_Assessment_Digital_Diary
             else
             {
                 MessageBox.Show("Error in Deleting Event");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            int result = eventService.UpdateEvent(eventid, updateTextBox.Text);
+            if (result > 0)
+            {
+                MessageBox.Show("Event Upadted successfully.");
+
+            }
+            else
+            {
+                MessageBox.Show("Error in Updating Event");
             }
         }
     }

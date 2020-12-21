@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.deteEvent = new System.Windows.Forms.Button();
             this.deleteTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.modifyTextBox = new System.Windows.Forms.RichTextBox();
-            this.updateEventTextBox = new System.Windows.Forms.Button();
+            this.updateTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.addEventButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.loadEventsdataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.deteEvent = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -62,6 +62,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.UpdateButton);
             this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -85,6 +86,17 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Delete Selected Event";
             // 
+            // deteEvent
+            // 
+            this.deteEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deteEvent.Location = new System.Drawing.Point(213, 38);
+            this.deteEvent.Name = "deteEvent";
+            this.deteEvent.Size = new System.Drawing.Size(87, 23);
+            this.deteEvent.TabIndex = 9;
+            this.deteEvent.Text = "Delete";
+            this.deteEvent.UseVisualStyleBackColor = true;
+            this.deteEvent.Click += new System.EventHandler(this.deteEvent_Click);
+            // 
             // deleteTextBox1
             // 
             this.deleteTextBox1.Location = new System.Drawing.Point(6, 20);
@@ -95,35 +107,23 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.modifyTextBox);
-            this.groupBox4.Controls.Add(this.updateEventTextBox);
+            this.groupBox4.Controls.Add(this.updateTextBox);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(664, 188);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(300, 170);
+            this.groupBox4.Size = new System.Drawing.Size(300, 135);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Modify Selected Event";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
-            // modifyTextBox
+            // updateTextBox
             // 
-            this.modifyTextBox.Location = new System.Drawing.Point(6, 21);
-            this.modifyTextBox.Name = "modifyTextBox";
-            this.modifyTextBox.Size = new System.Drawing.Size(280, 104);
-            this.modifyTextBox.TabIndex = 7;
-            this.modifyTextBox.Text = "";
-            // 
-            // updateEventTextBox
-            // 
-            this.updateEventTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateEventTextBox.Location = new System.Drawing.Point(207, 131);
-            this.updateEventTextBox.Name = "updateEventTextBox";
-            this.updateEventTextBox.Size = new System.Drawing.Size(87, 23);
-            this.updateEventTextBox.TabIndex = 4;
-            this.updateEventTextBox.Text = "Modify";
-            this.updateEventTextBox.UseVisualStyleBackColor = true;
-            this.updateEventTextBox.Click += new System.EventHandler(this.updateEventTextBox_Click);
+            this.updateTextBox.Location = new System.Drawing.Point(6, 21);
+            this.updateTextBox.Name = "updateTextBox";
+            this.updateTextBox.Size = new System.Drawing.Size(280, 104);
+            this.updateTextBox.TabIndex = 7;
+            this.updateTextBox.Text = "";
             // 
             // groupBox3
             // 
@@ -174,6 +174,7 @@
             // 
             // addTitletextBox
             // 
+            this.addTitletextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.addTitletextBox.Location = new System.Drawing.Point(164, 60);
             this.addTitletextBox.Name = "addTitletextBox";
             this.addTitletextBox.Size = new System.Drawing.Size(121, 20);
@@ -282,16 +283,16 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Welcome To Your Diary";
             // 
-            // deteEvent
+            // UpdateButton
             // 
-            this.deteEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deteEvent.Location = new System.Drawing.Point(213, 38);
-            this.deteEvent.Name = "deteEvent";
-            this.deteEvent.Size = new System.Drawing.Size(87, 23);
-            this.deteEvent.TabIndex = 9;
-            this.deteEvent.Text = "Delete";
-            this.deteEvent.UseVisualStyleBackColor = true;
-            this.deteEvent.Click += new System.EventHandler(this.deteEvent_Click);
+            this.UpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateButton.Location = new System.Drawing.Point(851, 329);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(99, 32);
+            this.UpdateButton.TabIndex = 8;
+            this.UpdateButton.Text = "Modify";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // Form1
             // 
@@ -320,7 +321,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button updateEventTextBox;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
@@ -338,9 +338,10 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView loadEventsdataGridView1;
         private System.Windows.Forms.Button addEventButton;
-        private System.Windows.Forms.RichTextBox modifyTextBox;
+        private System.Windows.Forms.RichTextBox updateTextBox;
         private System.Windows.Forms.RichTextBox deleteTextBox1;
         private System.Windows.Forms.Button deteEvent;
+        private System.Windows.Forms.Button UpdateButton;
     }
 }
 
