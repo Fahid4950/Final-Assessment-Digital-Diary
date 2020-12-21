@@ -59,5 +59,34 @@ namespace Final_Assessment_Digital_Diary
             loadEventsdataGridView1.DataSource = eventService.GetCreateEvenstList();
 
         }
+
+        private void addEventButton_Click(object sender, EventArgs e)
+        {
+            /*
+            EventService eventService = new EventService();
+            int result = eventService.ad(addProductNameTextBox.Text, addPriceTextBox.Text, addQuantityTextBox.Text, addProductCategoryComboBox.Text);
+            if (result > 0)
+            {
+                MessageBox.Show("Proudct added successfully.");
+
+            }
+            else
+            {
+                MessageBox.Show("Error in adding product");
+            }
+            */
+
+            EventService eventService = new EventService();
+            int result = eventService.AddNewEvent(addTitletextBox.Text, addImportancetextBox.Text,addEventTextBox.Text);
+            if (result > 0)
+            {
+                MessageBox.Show("Event added successfully.");
+
+            }
+            else
+            {
+                MessageBox.Show("Error in adding Event");
+            }
+        }
     }
 }

@@ -18,7 +18,9 @@ namespace Final_Assessment_Digital_Diary.Entities
 
         public string DateOfBirth { get; set; }
 
-        
-
+        /*public static implicit operator Create_Event(Create_Event v)
+        {
+            throw new NotImplementedException();
+        }*/
     }
 }

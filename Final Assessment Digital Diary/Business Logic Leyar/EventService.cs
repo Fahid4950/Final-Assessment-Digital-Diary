@@ -11,6 +11,10 @@ namespace Final_Assessment_Digital_Diary.Business_Logic_Leyar
     class EventService
     {
         EventDataAccess eventDataAccess;
+
+        public object Event { get; private set; }
+        public object Title { get; }
+
         public EventService()
         {
             eventDataAccess = new EventDataAccess();
@@ -21,6 +25,31 @@ namespace Final_Assessment_Digital_Diary.Business_Logic_Leyar
             return eventDataAccess.GetAllCreateEvents();
         }
 
-        
+        public int AddNewEvent(string title,string importancy,string message)
+        {
+            Create_Event create_Event = new Create_Event()
+            { Title = title,
+               Importancy = importancy,
+                Message = message,
+                //DateOfBirth = dateOfBirth
+            };
+            return this.eventDataAccess.InsertEvent(create_Event);
+
+
+            /* Event event = new Event()
+             {
+
+             { 
+                 Title = title,
+                 Importancy = Convert.ToInt32(importancy),
+                 Message = Convert.ToInt32(message),
+                  DateOfBirth = Convert.ToInt32(dateOfBirth)
+             };
+
+             databaseConnection = new DatabaseConnection();
+             return this.databaseConnection.InsertProduct(product);
+
+         } */
+        }
     }
 }
