@@ -13,9 +13,17 @@ namespace Final_Assessment_Digital_Diary
 {
     public partial class Form1 : Form
     {
+         int eventid = 0;
+
         public Form1()
         {
             InitializeComponent();
+            addEventButton.Click += this.RefreshEventGridView;
+            addEventButton.Click += this.ClearFields;
+            updateEventTextBox.Click += this.RefreshEventGridView;
+            updateEventTextBox.Click += this.ClearFields;
+            deleteTextBox1.Click += this.RefreshEventGridView;
+            deleteTextBox1.Click += this.ClearFields;
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -57,27 +65,16 @@ namespace Final_Assessment_Digital_Diary
         {
             EventService eventService =  new EventService();
             loadEventsdataGridView1.DataSource = eventService.GetCreateEvenstList();
+            
 
         }
 
         private void addEventButton_Click(object sender, EventArgs e)
         {
-            /*
-            EventService eventService = new EventService();
-            int result = eventService.ad(addProductNameTextBox.Text, addPriceTextBox.Text, addQuantityTextBox.Text, addProductCategoryComboBox.Text);
-            if (result > 0)
-            {
-                MessageBox.Show("Proudct added successfully.");
-
-            }
-            else
-            {
-                MessageBox.Show("Error in adding product");
-            }
-            */
+         
 
             EventService eventService = new EventService();
-            int result = eventService.AddNewEvent(addTitletextBox.Text, addImportancetextBox.Text,addEventTextBox.Text);
+            int result = eventService.AddNewEvent(addTitletextBox.Text, addcomboBox.Text,addEventTextBox.Text, adddateTimePicker.Text);
             if (result > 0)
             {
                 MessageBox.Show("Event added successfully.");
@@ -86,6 +83,71 @@ namespace Final_Assessment_Digital_Diary
             else
             {
                 MessageBox.Show("Error in adding Event");
+            }
+        }
+
+        private void loadEventsdataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            eventid = (int)loadEventsdataGridView1.Rows[e.RowIndex].Cells[0].Value;
+            modifyTextBox.Text = loadEventsdataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            EventService eventService = new EventService();
+            int result = eventService.AddNewEvent(addTitletextBox.Text, addcomboBox.Text, addEventTextBox.Text, adddateTimePicker.Text);
+            if (result > 0)
+            {
+                MessageBox.Show("Event added successfully.");
+
+            }
+            else
+            {
+                MessageBox.Show("Error in adding Event");
+            }
+        }
+
+        void RefreshEventGridView(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            loadEventsdataGridView1.DataSource = eventService.GetCreateEvenstList();
+        }
+
+        void ClearFields(object sender, EventArgs e)
+        {
+            //addCategoryTextBox.Text = updateCategoryTextBox.Text = deleteCategoryTextBox.Text = string.Empty;
+            addTitletextBox.Text= addcomboBox.Text=addEventTextBox.Text= adddateTimePicker.Text = updateEventTextBox.Text = string.Empty;
+        }
+
+        private void updateEventTextBox_Click(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            int result = eventService.UpdateEvent(eventid, updateEventTextBox.Text);
+            if (result > 0)
+            {
+                MessageBox.Show("Event Upadted successfully.");
+
+            }
+            else
+            {
+                MessageBox.Show("Error in Updating Event");
+            }
+        }
+
+        void RefreshGridView(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            loadEventsdataGridView1.DataSource = eventService.GetCreateEvenstList();
+        }
+
+        private void deteEvent_Click(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            int result = eventService.DeleteEvent(Convert.ToInt32( deleteTextBox1.Text));
+            if (result > 0)
+            {
+                MessageBox.Show("Event Deleted successfully.");
+
+            }
+            else
+            {
+                MessageBox.Show("Error in Deleting Event");
             }
         }
     }

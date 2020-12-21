@@ -30,7 +30,7 @@ namespace Final_Assessment_Digital_Diary.Data_Access_Leyar
                 create_Event.Title = reader["Title"].ToString();
                 create_Event.Importancy = reader["Importancy"].ToString();
                 create_Event.Message = reader["Message"].ToString();
-                //create_Event.DateOfBirth = reader["DateOfBirth"].ToString();
+                create_Event.DateOfBirth = reader["DateOfBirth"].ToString();
                 events.Add(create_Event);
             }
 
@@ -47,7 +47,7 @@ namespace Final_Assessment_Digital_Diary.Data_Access_Leyar
             create_Event.Title = reader["Title"].ToString();
             create_Event.Importancy = reader["Importancy"].ToString();
             create_Event.Message = reader["Message"].ToString();
-            //create_Event.DateOfBirth = reader["DateOfBirth"].ToString();
+            create_Event.DateOfBirth = reader["DateOfBirth"].ToString();
 
             return create_Event;
         }
@@ -55,14 +55,14 @@ namespace Final_Assessment_Digital_Diary.Data_Access_Leyar
 
         public int InsertEvent(Create_Event create_Event)
         {
-            string sql = "INSERT INTO Events(Title,Importancy,Message) VALUES('" + create_Event.Title + "','" + create_Event.Importancy + "','" + create_Event.Message + "')";
+            string sql = "INSERT INTO Events(Title,Importancy,Message,DateOfBirth) VALUES('" + create_Event.Title + "','" + create_Event.Importancy + "','" + create_Event.Message + "','" + create_Event.DateOfBirth + "')";
             int result = databaseConnection.ExecuteQuery(sql);
             return result;
         }
 
         public int UpdateEvent(Create_Event create_Event)
         {
-            string sql = "UPDATE Events SET Title='" + create_Event.Title + "',Importancy='" + create_Event.Importancy + "',Message='" + create_Event.Message + "',DateOfBirth='" + create_Event.DateOfBirth + "' WHERE Events=" + create_Event.EventId;
+            string sql = "UPDATE Events SET Message='" + create_Event.Message + "' WHERE EventId=" + create_Event.EventId;
             int result = databaseConnection.ExecuteQuery(sql);
             return result;
         }

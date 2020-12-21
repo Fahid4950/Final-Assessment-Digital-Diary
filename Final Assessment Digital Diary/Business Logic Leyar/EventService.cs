@@ -25,31 +25,38 @@ namespace Final_Assessment_Digital_Diary.Business_Logic_Leyar
             return eventDataAccess.GetAllCreateEvents();
         }
 
-        public int AddNewEvent(string title,string importancy,string message)
+        public int AddNewEvent(string title,string importancy,string message,string dateOfBirth)
         {
             Create_Event create_Event = new Create_Event()
             { Title = title,
                Importancy = importancy,
                 Message = message,
-                //DateOfBirth = dateOfBirth
+                DateOfBirth = dateOfBirth,
             };
             return this.eventDataAccess.InsertEvent(create_Event);
 
 
-            /* Event event = new Event()
-             {
+        }
 
-             { 
-                 Title = title,
-                 Importancy = Convert.ToInt32(importancy),
-                 Message = Convert.ToInt32(message),
-                  DateOfBirth = Convert.ToInt32(dateOfBirth)
-             };
+        public int UpdateEvent(int eventid, string message)
+        {
+            Create_Event create_Event = new Create_Event()
+            {
+                EventId = eventid,
+                Message = message,
 
-             databaseConnection = new DatabaseConnection();
-             return this.databaseConnection.InsertProduct(product);
+            };
+            return this.eventDataAccess.UpdateEvent(create_Event);
 
-         } */
+
+        }
+
+        public int DeleteEvent(int eventid)
+        {
+           
+            return this.eventDataAccess.DeleteEvent(eventid);
+
+
         }
     }
 }

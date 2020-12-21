@@ -31,14 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.deleteTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.modifyTextBox = new System.Windows.Forms.RichTextBox();
+            this.updateEventTextBox = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.addEventButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.adddateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.addTitletextBox = new System.Windows.Forms.TextBox();
@@ -52,11 +50,9 @@
             this.loadEventsdataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.addEventButton = new System.Windows.Forms.Button();
-            this.addImportancetextBox = new System.Windows.Forms.TextBox();
+            this.deteEvent = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +63,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox6);
-            this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -80,8 +75,8 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.listView3);
-            this.groupBox6.Controls.Add(this.button2);
+            this.groupBox6.Controls.Add(this.deteEvent);
+            this.groupBox6.Controls.Add(this.deleteTextBox1);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(664, 364);
             this.groupBox6.Name = "groupBox6";
@@ -90,81 +85,48 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Delete Selected Event";
             // 
-            // listView3
+            // deleteTextBox1
             // 
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(6, 21);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(187, 59);
-            this.listView3.TabIndex = 0;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(211, 38);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.listView2);
-            this.groupBox5.Controls.Add(this.button1);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(664, 272);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(300, 86);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Modify Selected Event";
-            // 
-            // listView2
-            // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(6, 21);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(187, 59);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(199, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Modify";
-            this.button1.UseVisualStyleBackColor = true;
+            this.deleteTextBox1.Location = new System.Drawing.Point(6, 20);
+            this.deleteTextBox1.Name = "deleteTextBox1";
+            this.deleteTextBox1.Size = new System.Drawing.Size(207, 57);
+            this.deleteTextBox1.TabIndex = 8;
+            this.deleteTextBox1.Text = "";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.listView1);
+            this.groupBox4.Controls.Add(this.modifyTextBox);
+            this.groupBox4.Controls.Add(this.updateEventTextBox);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(664, 176);
+            this.groupBox4.Location = new System.Drawing.Point(664, 188);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(300, 90);
+            this.groupBox4.Size = new System.Drawing.Size(300, 170);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Display Selected Event";
+            this.groupBox4.Text = "Modify Selected Event";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
-            // listView1
+            // modifyTextBox
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(6, 31);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(233, 54);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.modifyTextBox.Location = new System.Drawing.Point(6, 21);
+            this.modifyTextBox.Name = "modifyTextBox";
+            this.modifyTextBox.Size = new System.Drawing.Size(280, 104);
+            this.modifyTextBox.TabIndex = 7;
+            this.modifyTextBox.Text = "";
+            // 
+            // updateEventTextBox
+            // 
+            this.updateEventTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateEventTextBox.Location = new System.Drawing.Point(207, 131);
+            this.updateEventTextBox.Name = "updateEventTextBox";
+            this.updateEventTextBox.Size = new System.Drawing.Size(87, 23);
+            this.updateEventTextBox.TabIndex = 4;
+            this.updateEventTextBox.Text = "Modify";
+            this.updateEventTextBox.UseVisualStyleBackColor = true;
+            this.updateEventTextBox.Click += new System.EventHandler(this.updateEventTextBox_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.addImportancetextBox);
             this.groupBox3.Controls.Add(this.addEventButton);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.adddateTimePicker);
@@ -182,6 +144,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // addEventButton
+            // 
+            this.addEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEventButton.Location = new System.Drawing.Point(503, 306);
+            this.addEventButton.Name = "addEventButton";
+            this.addEventButton.Size = new System.Drawing.Size(104, 61);
+            this.addEventButton.TabIndex = 13;
+            this.addEventButton.Text = "Create Event";
+            this.addEventButton.UseVisualStyleBackColor = true;
+            this.addEventButton.Click += new System.EventHandler(this.addEventButton_Click);
+            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -194,9 +167,9 @@
             // 
             // adddateTimePicker
             // 
-            this.adddateTimePicker.Location = new System.Drawing.Point(454, 74);
+            this.adddateTimePicker.Location = new System.Drawing.Point(431, 17);
             this.adddateTimePicker.Name = "adddateTimePicker";
-            this.adddateTimePicker.Size = new System.Drawing.Size(176, 20);
+            this.adddateTimePicker.Size = new System.Drawing.Size(199, 20);
             this.adddateTimePicker.TabIndex = 11;
             // 
             // addTitletextBox
@@ -223,7 +196,7 @@
             "Very Important",
             "Medium",
             "Less Important"});
-            this.addcomboBox.Location = new System.Drawing.Point(454, 0);
+            this.addcomboBox.Location = new System.Drawing.Point(164, 94);
             this.addcomboBox.Name = "addcomboBox";
             this.addcomboBox.Size = new System.Drawing.Size(121, 21);
             this.addcomboBox.TabIndex = 8;
@@ -281,11 +254,12 @@
             this.loadEventsdataGridView1.AllowUserToAddRows = false;
             this.loadEventsdataGridView1.AllowUserToDeleteRows = false;
             this.loadEventsdataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.loadEventsdataGridView1.Location = new System.Drawing.Point(-17, 44);
+            this.loadEventsdataGridView1.Location = new System.Drawing.Point(6, 44);
             this.loadEventsdataGridView1.Name = "loadEventsdataGridView1";
             this.loadEventsdataGridView1.ReadOnly = true;
-            this.loadEventsdataGridView1.Size = new System.Drawing.Size(303, 99);
+            this.loadEventsdataGridView1.Size = new System.Drawing.Size(288, 99);
             this.loadEventsdataGridView1.TabIndex = 1;
+            this.loadEventsdataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loadEventsdataGridView1_CellClick);
             this.loadEventsdataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label2
@@ -308,23 +282,16 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Welcome To Your Diary";
             // 
-            // addEventButton
+            // deteEvent
             // 
-            this.addEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEventButton.Location = new System.Drawing.Point(503, 306);
-            this.addEventButton.Name = "addEventButton";
-            this.addEventButton.Size = new System.Drawing.Size(104, 61);
-            this.addEventButton.TabIndex = 13;
-            this.addEventButton.Text = "Create Event";
-            this.addEventButton.UseVisualStyleBackColor = true;
-            this.addEventButton.Click += new System.EventHandler(this.addEventButton_Click);
-            // 
-            // addImportancetextBox
-            // 
-            this.addImportancetextBox.Location = new System.Drawing.Point(164, 92);
-            this.addImportancetextBox.Name = "addImportancetextBox";
-            this.addImportancetextBox.Size = new System.Drawing.Size(121, 20);
-            this.addImportancetextBox.TabIndex = 16;
+            this.deteEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deteEvent.Location = new System.Drawing.Point(213, 38);
+            this.deteEvent.Name = "deteEvent";
+            this.deteEvent.Size = new System.Drawing.Size(87, 23);
+            this.deteEvent.TabIndex = 9;
+            this.deteEvent.Text = "Delete";
+            this.deteEvent.UseVisualStyleBackColor = true;
+            this.deteEvent.Click += new System.EventHandler(this.deteEvent_Click);
             // 
             // Form1
             // 
@@ -339,7 +306,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -354,8 +320,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button updateEventTextBox;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
@@ -364,20 +329,18 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox addEventTextBox;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox addcomboBox;
         private System.Windows.Forms.TextBox addTitletextBox;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DateTimePicker adddateTimePicker;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.DataGridView loadEventsdataGridView1;
         private System.Windows.Forms.Button addEventButton;
-        private System.Windows.Forms.TextBox addImportancetextBox;
+        private System.Windows.Forms.RichTextBox modifyTextBox;
+        private System.Windows.Forms.RichTextBox deleteTextBox1;
+        private System.Windows.Forms.Button deteEvent;
     }
 }
 
