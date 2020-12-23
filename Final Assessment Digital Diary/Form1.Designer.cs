@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.UpdateButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.deteEvent = new System.Windows.Forms.Button();
             this.deleteTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.updateTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.addEventButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.adddateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -50,8 +52,6 @@
             this.loadEventsdataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.UpdateButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -74,6 +74,17 @@
             this.groupBox1.Size = new System.Drawing.Size(1020, 456);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateButton.Location = new System.Drawing.Point(851, 329);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(99, 32);
+            this.UpdateButton.TabIndex = 8;
+            this.UpdateButton.Text = "Modify";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // groupBox6
             // 
@@ -145,6 +156,16 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(175, 19);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Start Writting from here.";
             // 
             // addEventButton
             // 
@@ -284,27 +305,6 @@
             this.label5.Size = new System.Drawing.Size(318, 34);
             this.label5.TabIndex = 5;
             this.label5.Text = "Welcome To Your Diary";
-            // 
-            // UpdateButton
-            // 
-            this.UpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateButton.Location = new System.Drawing.Point(851, 329);
-            this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(99, 32);
-            this.UpdateButton.TabIndex = 8;
-            this.UpdateButton.Text = "Modify";
-            this.UpdateButton.UseVisualStyleBackColor = true;
-            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 19);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Start Writting from here.";
             // 
             // Form1
             // 
